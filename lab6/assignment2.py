@@ -10,3 +10,20 @@ Creating a `car1` object with valid `make` and `model` attributes and calling `p
    
 Creating a `car2` object without setting the attributes (or by setting them to `None`) and calling `print_car_info()` to see how the exception is handled.
 """
+
+class Car:
+    def __init__(self,make=None,model=None):
+        self.make=make
+        self.model=model
+    def print_car_info(self):
+        try:
+            print(f"Make: {self.make}, Model: {self.model}")
+        except AttributeError:
+            print("Error: Make or Model attribute is not set.")
+
+# Test the method
+car1 = Car("Toyota", "Corolla")
+car1.print_car_info()  # Output: Make: Toyota, Model: Corolla
+
+car2 = Car()
+car2.print_car_info
